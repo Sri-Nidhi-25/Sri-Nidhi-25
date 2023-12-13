@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Excercise functions</title>
+  </head>
+  <body>
+
+    <script>
+      /*
+      function greet(name){
+        if (!name) {
+          console.log('Hi there!!')
+        } else{
+        console.log(`Hello ${name}!!`);
+        }
+      }
+      greet('Sri');
+      */
+
+      function convertToF(celsius=''){
+        const F = ((celsius*9)/5)+32;
+        console.log(F);
+        return 'temperature1'
+      }
+      //convertToF(25);
+
+      function convertToC(Fahrenheit=''){
+        const C =((Fahrenheit-32)*5)/9; 
+        console.log(C);
+        return 'temperature2'
+      }
+      //convertToC(86);
+
+      function convertTemp(degrees,unit){
+        if (unit==='C'){
+          console.log(convertToF(degrees));
+        }
+        else if (unit==='F'){
+          console.log(convertToC(degrees));
+        }
+        
+      }
+      convertTemp(86,'F');
+    </script>
+  </body>
+</html>

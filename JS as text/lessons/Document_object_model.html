@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+  <body>
+    <button> Hello</button>
+    <button class="js-button"> 2nd button</button>
+    <script>
+
+      console.log(document.querySelector('button').innerHTML);
+    
+      document.querySelector('button')
+        .innerHTML =" changed";
+      
+      const buttonElem = document.querySelector('.js-button');
+
+      /*
+      console.log(document.title);
+      document.title='DO Model'; // title from head is called.
+      console.log(document.body);
+      console.log(typeof document.body);
+      console.log(document.body.innerHTML);
+
+     document.body.innerHTML='hello';  // removes everything and shows only hello.
+     document.body.innerHTML='<button> HIII</button>';
+     */
+    </script>
+  </body>
+</html>

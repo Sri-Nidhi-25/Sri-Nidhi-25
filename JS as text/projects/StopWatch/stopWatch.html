@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stop Watch App</title>
+    <style>
+      body{
+        background-color: rgb(52, 52, 52);
+        color:white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!--One hour timer -->
+    <p class="para-js"></p>
+    <button class="start-js">Start</button>
+    <button class="stop-js">Stop</button>
+    <button class="reset-js">Reset</button>
+    
+    
+    <script>
+      let IntervalID;
+      let count=0;
+      let s1=0;
+      let s2=0;
+      let m1=0;
+      let m2=0;
+      let h1=0;
+      let h2=0;
+      let m=0;
+      let h=0;
+
+      //onScreen =`${h2}${h1}:${m2}${m1}:${s2}${s1}`;
+
+      document.querySelector('.para-js')
+        .innerHTML=`${h2}${h1}:${m2}${m1}:${s2}${s1}`;
+
+      document.querySelector('.start-js')
+        .addEventListener('click',()=>{
+        IntervalID=setInterval(()=>{
+          counting();
+        },1000);
+      });
+
+      document.querySelector('.stop-js')
+      .addEventListener('click',()=>{
+        clearInterval(IntervalID);
+        display();
+        console.log('stopped'); 
+      });
+
+
+      function counting(){
+        count+=1;
+        if (count<10){
+          s1 = count;
+          display();
+        } 
+        else if(count>9 & count<60){
+          let a=String(count);
+          s1=a[1];
+          s2=a[0];
+          display();
+        } 
+        else if (count === 60){
+          m+=1;
+          if (m<10){
+            count=0;
+            s1=0; 
+            s2=0;
+            m1=m;
+            display();
+          } 
+          else if (m>9 & m<60){
+            let b=String(m);
+            m1=b[1];
+            m2=b[0];
+            count=0;
+            s1=0; 
+            s2=0;
+            display();
+          } 
+          else if (m=== 60){
+            Stop();     
+            count=0;
+            s1=0; 
+            s2=0;
+            m1=0; 
+            m2=0;
+            h1=1; 
+            h2=0;   
+            document.querySelector('.para-js')
+                .innerHTML= `'Your one hour Timer is complete'`;
+            console.log(m2,m1);
+            console.log(count);
+            return ; 
+           } 
+          }
+        }
+
+      function display (){
+        document.querySelector('.para-js')
+          .innerHTML= `${h2}${h1}:${m2}${m1}:${s2}${s1}`;
+          console.log(m2,m1);
+          console.log(count);
+      }
+
+      function Stop(){
+        clearInterval(IntervalID);
+        display();
+        console.log('stopped');
+      }
+
+      document.querySelector('.reset-js')
+      .addEventListener('click',()=>{
+        clearInterval(IntervalID);
+        s1=0;
+        s2=0;
+        m1=0;
+        m2=0;
+        h1=0;
+        h2=0;
+        count=0;
+        document.querySelector('.para-js')
+          .innerHTML= `${h2}${h1}:${m2}${m1}:${s2}${s1}`;
+        console.log(count);
+        console.log('reset');
+      });
+
+    </script>
+  </body>
+</html>

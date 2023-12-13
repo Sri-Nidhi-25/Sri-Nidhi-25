@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advamced functions - 2</title>
+  </head>
+  <body>
+    <script>
+
+      const multiply = (a,b)=> a*b;
+    
+      console.log(multiply(2,3));
+
+      function countPositive(nums){
+        n=0;
+        nums.forEach((value)=>{
+          if (value>0) {
+            n+=1
+          }
+        });
+        return n;
+      }
+
+      countPositive([2,-3,4,5,-7,8,-90,1]);
+      console.log(countPositive([2,-3,4,5,-7,8,-90,1]));
+
+
+      function addNum(array,num){
+        console.log(array.map(value=> value+num));
+      }
+
+      addNum([2,-3,4,5,-7,8,-90,1],5);
+
+      function removeEgg(foods){
+        console.log(foods.filter(value => value != 'egg'));
+      }
+      removeEgg(['yes','egg','no','egg','sure','egg']);
+
+      function removeEggs(foods){
+        let n=0;
+        console.log(foods.filter( value => {
+          if (value =="egg"){
+            n+=1;
+            if (n>2){
+              return value;
+            }
+          } else { 
+            return value;
+          }
+        }));
+      }
+
+      removeEggs(['egg','yes','egg','no','egg','sure','egg']);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>excercise</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <script>
+
+      let A=["yes",'search','nop','search','no'];
+  
+      function findIndex(array,words){
+        let p=0;
+        let L=[];
+        for (let i=0;i<array.length;i++){
+          const string=array[i];
+          
+          if (string===words)
+          {p++;
+          break;} 
+        }
+        if (p>0){
+            L.push(words);
+            //console.log(array.indexOf(words));
+          } else{
+            console.log(-1);
+          }
+        }
+      //findIndex(A,'no');
+
+      function uniqueArray(word){
+        let L=[];
+        for (let i=0;i<word.length;i++){
+         const H= findIndex(word,word[i]);
+          if(H!=='-1') {
+            if (L.includes(word[i])){
+              continue;
+            } else{
+              L.push(word[i]);
+            }
+          }
+        }
+        console.log(L);
+      }
+      uniqueArray(A);
+
+
+      
+/*
+    function removeEggs(A){
+      array=A.slice();// makes a copy
+      array.reverse();//reverses the array and saves it in itself
+      let result=[];
+      let p=0
+      for(let i=0; i<array.length;i++){
+        if (array[i]==='egg'){
+          p++;
+          if(p>2){
+            result.push(array[i]);
+          } else{
+            continue;
+          }
+
+        } else{
+          result.push(array[i]);
+        }
+      }
+      console.log(result);
+      console.log(A);
+      console.log(array);
+    }
+    removeEggs(['egg','egg','no','yes','egg','egg']);
+    */
+/*
+    for(let i=1; i<21; i++){
+      if(i%3===0 && i%5===0){
+        console.log('FizzBuzz');
+      } else if (i%5===0){
+        console.log('Buzz');
+      } else if (i%3===0){
+        console.log('Fizz');
+      } else {
+        console.log(i);
+      }
+    }
+    */
+    </script>
+  </body>
+</html>

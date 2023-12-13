@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator Local storage</title>
+    <style>
+      body{
+        background-color: black;
+      }
+      .num{
+        border-radius: 60px;
+        height: 60px;
+        width: 60px;
+        border: none;
+        padding: 10px 17px;
+        background-color: rgb(51, 51, 51);
+        color: white;
+        font-size: 26px;
+        font: arial;
+        margin-right: 5px;
+      }
+      .clear{
+        font-size: 17px;
+        padding: 2px;
+      }
+      .cal{
+        color: white;
+        font-size: 45px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-family: arial;
+      }
+      .sym{
+        background-color: rgb(254, 160,10);
+      }
+    </style>
+  </head>
+  <body>
+
+    <p class="display cal"></p>
+    <p>
+      <button onclick="updateCalculation('1')" class="num">1</button>
+      <button onclick="updateCalculation('2')" class="num">2</button>
+      <button onclick="updateCalculation('3')" class="num">3</button>
+      <button onclick="updateCalculation('+')" 
+      class="num sym">+</button>
+    </p>
+    <p>
+      <button onclick="updateCalculation('4')" class="num">4</button>
+      <button onclick="updateCalculation('5')" class="num">5</button>
+      <button onclick="updateCalculation('6')" class="num">6</button>
+      <button onclick="updateCalculation('-')" class="num sym">-</button>
+    </p>
+    <p>
+      <button onclick="updateCalculation('7')" class="num">7</button>
+      <button onclick="updateCalculation('8')" class="num">8</button>
+      <button onclick="updateCalculation('9')" 
+      class="num">9</button>
+      <button onclick="updateCalculation('*')" class="num sym">*</button>
+    </p>
+    <p>
+      <button onclick="updateCalculation('0')" class="num">0</button>
+      <button onclick="updateCalculation('.')" class="num">.</button>
+      <button onclick="updateCalculation('=');
+       localStorage.setItem('calculation',calculation);" class="num">=</button>
+      <button onclick="updateCalculation('/')" class=" num sym">/</button>
+    </p>
+
+    <button onclick="updateCalculation('');
+    localStorage.setItem('calculation',calculation);" class="num clear">Clear</button>
+
+    <script>
+      function defaultvalue(){ 
+        calculation=''; 
+      }
+       let calculation = localStorage.getItem('calculation')|| '';
+
+      defaultvalue();
+      function updateCalculation(buttn){
+        if (buttn===''){
+          defaultvalue();
+          console.log('cleared');
+        } else if (buttn==='='){
+          calculation=eval(calculation);
+          console.log(calculation);
+        } else {
+          calculation += `${buttn}`;
+          console.log(calculation);
+        }
+        localStorage.setItem('calculation',calculation);
+        document.querySelector('.display').innerHTML= `${calculation}`
+      }
+      
+    </script>
+  </body>
+</html>

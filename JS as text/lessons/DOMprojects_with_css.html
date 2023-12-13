@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM projects with css</title>
+    <style>
+      body{
+        font-family: Arial;
+      }
+
+      .sub-button{
+        border: none;
+        background-color: black;
+        color:white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+       .is-subscribed {
+        background-color: rgb(240,240, 240);
+        color: black;
+      }
+       .cost-input{
+        font-size: 14px;
+        padding: 10px;
+        margin-bottom: 70px;
+       }
+       .calculate-button{
+        background-color: green;
+        border: none;
+        padding: 12px 15px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- project 1 -->
+
+    <p> YouTube Subscribe Button</p>
+    <button onclick=" Subscribe()" class="js-sub sub-button"> Subscribe</button>
+
+     <!-- project 3 -->
+     <br><br><br>
+     <p> Amazon Shipping Calculator</p>
+     <p> Orders under $40 =+ $10 shipping. </p>
+     <p> Orders over $40 = Free shipping. </p>
+     <input placeholder="Cost of order" class="input cost-input" onkeydown="
+     //if (event.key==='Enter'){calculateTotal();};
+      keyDownfun(event); "> 
+     <button onclick="calculateTotal()" class="calculate-button">Calculate</button>
+     <p class="total-display"></p>
+     
+     <!-- project 2 -->
+     <p>Rock Paper Scissors</p>
+
+    <script>
+      // project 1 
+
+      function Subscribe() {
+        const subElem = document.querySelector('.js-sub');
+
+        if (subElem.innerText ==='Subscribe'){
+          subElem.innerHTML ='Subscribed';
+          subElem.classList.add('is-subscribed');
+        } else {
+          subElem.innerHTML='Subscribe';
+          subElem.classList.remove('is-subscribed');
+        }
+      }
+
+      //project 2 
+
+      
+
+      //project 3 
+        function calculateTotal(){
+         const element = document.querySelector('.input');
+          let cost=(Number(element.value))*100;
+          console.log(cost);
+          
+          if (cost <4000) {
+            console.log(cost=cost+1000);
+          }
+          document.querySelector('.total-display').innerHTML = `$${cost/100}`
+        }
+        
+        function keyDownfun(event){
+          if (event.key==='Enter'){
+            calculateTotal();
+          };
+        }
+      
+
+    </script>
+  </body>
+</html>

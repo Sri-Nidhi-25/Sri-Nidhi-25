@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+  </head>
+  <body>
+
+    <button class="click start-button">Start</button>
+    <br><br>
+    <button class="add-to-cart-button">Add to cart</button>
+    <p class="para"></p>
+
+    <button class="add-button">Add</button> 
+    <button class="remove-button">Remove</button>
+
+
+    <script>
+
+     var add = ()=> console.log(2+3);
+      
+
+      function runTwice(fun){
+        fun();
+        fun();
+      }
+      runTwice(()=> console.log('yes'));
+      runTwice(add);
+
+      document.querySelector('.start-button')
+        .addEventListener('click',()=>{
+          start();
+        });
+
+      function start(){
+        document.querySelector('.click')
+        .innerHTML= 'Loading...'
+       setTimeout(()=>{
+        document.querySelector('.click')
+        .innerHTML= 'Finished!'
+       },1000);
+      }
+
+      document.querySelector('.add-to-cart-button')
+        .addEventListener('click',()=>{
+          addToCart();
+        });
+
+      function addToCart(){
+        document.querySelector('.para')
+        .innerHTML="Added";
+
+        clearTimeout();
+
+        setTimeout(function(){
+          document.querySelector('.para').
+        innerHTML=""
+        },2000);
+      }
+
+      document.querySelector('.add-button')
+        .addEventListener('click',()=>{
+          messages++; 
+          check();
+        });
+
+        document.querySelector('.remove-button')
+        .addEventListener('click',()=>{
+          if (messages>0){
+            messages--
+          } else{
+            messages=0;
+          }; 
+          check();
+        });
+
+      // changes message in title every sec
+      let messages=0;
+      let ID1;
+      let ID2;
+
+      function check(){
+        
+        console.log(messages);
+        if (messages>0){ 
+          console.log('entered if');
+
+          ID1 =setInterval(()=>{
+            document.title='App';
+          },1000);
+
+          ID2 =setInterval(()=>{
+            document.title=`(${messages})New Messages`;
+          },2000);
+
+          console.log('exited if');
+
+        } else if (messages === 0){
+          console.log('entered else');
+          clearInterval(ID1);
+          clearInterval(ID2);
+          document.title='App';
+        }
+      }
+    
+    </script>
+  </body>
+</html>

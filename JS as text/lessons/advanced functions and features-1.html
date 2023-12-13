@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced functions</title>
+    <style></style>
+  </head>
+  <body>
+
+    <button class="button">Click</button>
+    <script>
+/*
+     greetings();
+      // hoisting- function can be called before created
+      function greetings(){ // creating functions without vars will enable hoisting
+        console.log('Hello');
+      }
+
+      // these functions doesnt allow hoisting.
+      let func = function greetings(){ //removing 'greetings' will make it an anonymous function.
+        console.log('Hello2');
+      };
+      console.log(func);
+      console.log(typeof func);
+      func();
+
+      const object1={
+        num:2,
+        fun: function(){
+          console.log('Hello3');
+         }
+      }
+      object1.fun();
+
+      function run(par){
+        par();
+      }
+      run(function(){
+          console.log('Hello5');
+         });
+         
+    //function to run and time in milliseconds 
+    // 1000 milliseconds = 3sec
+    setTimeout(function(){ // asysnchronous function
+      console.log('timeout')
+    },3000);
+    // asynchronous - doesnt wait for time out.
+    console.log('next line'); // asynchronous code
+
+    //this goes of after every 3 secs
+    setInterval(function(){ // asysnchronous function
+      console.log('time')
+    },1000);
+    console.log('over');
+    
+
+    // way to loop through the array
+    [
+      'make dinner',
+      'yes',
+      'wash clothes',
+      'sleep on time',
+      'yes'
+    ].forEach(function(value, index){//index is not always necessary
+      if (value === 'yes'){
+        return; // works as a continue in for loop
+      }
+      console.log(value);
+      console.log(index);
+      clearInterval(); // get id buy saving it in a variable.
+      clearTimeout();
+    });
+    */
+
+/*
+    // part - 2
+    
+
+    // Arrow functions  - shot way to write functions 
+
+    const arrowFun = () => {
+      console.log('Hello');
+      return 5;
+    }
+
+    arrowFun();
+    console.log(arrowFun);
+    console.log(arrowFun());
+
+    const arrow = param =>{ //pranthesis are negligible for one parameter
+      console.log(param + 2);
+    }
+    arrow(5);
+
+    const oneLine = () => 5+5; // curley brackets are negligible in a one liner.
+    console.log(oneLine());
+
+    [
+      'make dinner',
+      'yes',
+      'wash clothes',
+      'sleep on time',
+      'yes'
+     ].forEach((value, index) => {
+        if (value === 'yes'){
+        return; 
+      }
+      console.log(value);
+      console.log(index);
+    });
+
+    const object2 ={
+      math: 2,
+      funct: () =>{console.log("done")},
+      function1(){console.log("dusted")}
+    }
+
+   object2.funct();
+   object2.function1();
+
+   */
+    
+/*   
+   // addEventListener - similar to onclick=""
+    // parameter1 - event - when to listen,
+    // parameter2 - function.
+    // advantages - add and remove multiple events to a class.
+    
+    const buttonElement= document.querySelector('.button');
+    
+    const eventListener = () => {
+      console.log("click1");
+    }
+    buttonElement.addEventListener('click',eventListener);
+    //removeEventListener - (event , function)
+    buttonElement.removeEventListener('click',eventListener);
+
+    buttonElement.addEventListener('click',() => {
+      console.log("click2");
+    });
+
+    */
+
+    // filter - value , index
+    // filter creates an array to saves the filtered.
+
+    console.log([1,-2,3,-5,6,-7,8].filter((value, index)=>
+    {
+      /*
+      if (value >= 0){
+        return true;
+      } else {
+      return false;
+      }
+      */
+      return value>=0; // short hand 
+    }));
+
+
+    // map - value , index
+    // similar to forEach but returns value
+    
+    console.log([1,-2,3,-5,6,-7,8].map((value, index)=>{
+      return value*2;
+    }));
+
+    // shorcut for arrow function 
+
+    console.log([1,-2,3,-5,6,-7,8].map(value =>value*2 ));
+    
+
+    // closure - once a function has access
+    // to a value it will always have access 
+    // to it. even after its deleted.
+
+
+    
+    const coffee =(array)=>{
+      array.forEach(value => {
+        check1(value);
+      });
+    }
+    let interval;
+    let timeOut;
+    function check1(t){
+      
+      if (t <5){
+        console.log('entering if'); 
+        timeOut = setTimeout(()=>{ 
+            console.log('timeout')
+          },3000);
+          
+          console.log('entering interval'); 
+          
+        interval= setInterval(()=>{ 
+            console.log('interval')
+          },1000);
+          console.log('out of if');
+
+      } else {
+        console.log('else')
+        clearInterval(interval); // get id buy saving it in a variable.
+        clearTimeout(timeOut);
+      }
+    }
+      
+   coffee([6,2,8]);
+     
+
+    </script>
+  </body>
+</html>

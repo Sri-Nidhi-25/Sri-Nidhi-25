@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon Calculator</title>
+    <style>
+      .calculate-button{
+        background-color: green;
+        border: none;
+        padding: 12px 15px;
+        color: white;
+      }
+      .cost-input{
+        font-size: 14px;
+        padding: 10px;
+        margin-bottom: 70px;
+      }
+      .error{
+        color: red;
+      }
+      
+    </style>
+  </head>
+  <body>
+
+     <p> Amazon Shipping Calculator</p>
+     <p> Orders under $40 =+ $10 shipping. </p>
+     <p> Orders over $40 = Free shipping. </p>
+
+     <input placeholder="Cost of order" class="input cost-input" onkeydown="
+     //if (event.key==='Enter'){calculateTotal();};
+      keyDownfun(event);"> 
+
+     <button onclick="calculateTotal()" class="calculate-button">Calculate</button>
+
+     <p class="total error"></p>
+
+    <script>
+       function calculateTotal(){
+         const element = document.querySelector('.input');
+          let cost=(Number(element.value));
+
+          if (cost <=0){
+
+            document.querySelector('.error').innerHTML = `ERROR:cost cannot be less than  or equal $0`
+          }
+          else if (cost <40 && cost>0) {
+            document.querySelector('.total').classList.remove('error')
+            cost=(cost*100)+1000;
+            document.querySelector('.total').innerHTML = `$${cost/100}`
+          } 
+        }
+        
+        function keyDownfun(event){
+          if (event.key==='Enter'){
+            calculateTotal();
+          };
+        }
+    </script>
+  </body>
+</html>
+
+
+
+
+     

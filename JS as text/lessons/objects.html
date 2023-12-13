@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+    <style></style>
+  </head>
+  <body>
+    <p></p>
+
+    <script>
+      /*
+      const product ={
+        name:'socks',
+        price:1090
+      };
+
+      console.log(product);
+      console.log(product.name);
+      console.log(product['name']);
+
+      product.name='cotton socks';
+      console.log(product.name);
+
+      product.new="new"; // add new value
+      console.log(product);
+
+      delete product.new; // del 
+      console.log(product);
+      */
+      /*
+      const thing= {
+        name:'shirt',
+        price:1090,
+        rating: {
+          stars: 4.5,
+          count:87
+        },
+        // fun: ()=>{} or method(){} [short hand method]
+        fun: function function1 () { 
+          console.log('function inside an object');
+        }
+      };
+      console.log(thing.rating.count);
+      thing.fun();
+
+      console.log(JSON.stringify(thing));// JSON - less features, 
+      //universal, store &transfer data, functions not supported.
+      //stringify - converts objects from js object to JSON.
+
+      jsonString=JSON.stringify(thing);
+      console.log(JSON.parse(jsonString));
+      //parse - converts json string to js object.
+      */
+      /*
+      // autoboxing - wraps strings in a special onject
+      // null and undefined cant be used.
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase());
+
+      const object1 ={
+        message:'hello',
+      };
+      // objects are references and hence changable.
+      const object2 =object1;
+      object1.message='Good job!';
+      console.log(object1);
+      console.log(object2);
+
+      const object3 ={
+        message: 'Good job!',
+      };
+
+    // object refences are different and contents can be 
+    // checked only manually.
+    console.log(object3===object1);
+    console.log(object1===object2);
+     */
+
+    const object4 ={
+        message: 'Good job!',
+        price : 799
+      };
+
+      // shortcut - destructuring
+    // similr const message= object4.message;
+      const {message, price}=object4;
+      console.log(message);
+      console.log(price);
+
+    // short hand property - shortcut
+    const object5 ={
+      //message: message
+      message,
+      //method : function function1(){
+      //  console.log('method');
+     // }
+      method(){ // short hand method syntax.
+        console.log('method');
+      }
+    };
+    console.log(object5);
+    object5.method();
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM excercises</title>
+
+  </head>
+  <body>
+    <!--
+    <button>a</button>
+    <button class="b">9b</button>
+    
+    <button onclick="display('Heads')">Heads</button>
+    <button onclick="display('Tails')">Tails</button>
+    <p class="display"> </p>
+    <input placeholder="Name" class="name" onkeydown="
+    if (event.key==='Enter'){
+        input();
+    }"> 
+    <button onclick="input()">Submit</button>
+    <p class="play"></p>
+    -->
+     
+    <input placeholder="press a key " onkeyup="typing()"> 
+    <p class="type"></p>
+    
+
+
+    <script>
+      /*
+     console.log(document.querySelector('button'));
+     document.querySelector('.b').innerHTML='9b done!';
+      */
+    /*
+    function display (word){
+      document.querySelector('.display').innerHTML=`You chose: ${word}`
+    }
+    function input(){
+    let Nam = document.querySelector('.name').value
+    document.querySelector('.play').innerHTML=`Your name is:${Nam}`;
+    }
+    */
+    
+     function typing(){
+      let inner = (document.querySelector('.type').innerHTML+=event.key);
+     }
+     
+    
+    </script>
+  </body>
+</html>
