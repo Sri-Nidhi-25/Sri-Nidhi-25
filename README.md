@@ -42,13 +42,13 @@ A research system designed to go beyond simple retrieval — **modeling knowledg
 
 ---
 
-## 🔐 Privacy-Preserving Voice Data Assistant
+## 🔐 Privacy-Aware Voice Data Assistant
 
-A voice-based AI system combining speech processing, privacy-preserving audio transformation, local LLM orchestration, tool calling, and structured data interaction.
+A voice-based AI system combining speech processing, privacy-aware audio transformation, local LLM orchestration, tool calling, and structured data interaction.
 
 **Exploring:** privacy · speech AI · local inference · tool use · confidence · benchmarking
 
-→ [View Repository](https://github.com/Sri-Nidhi-25/Privacy-Preserving-Voice-Data-Assistant)
+→ [View Repository](https://github.com/Sri-Nidhi-25/Privacy-Aware-Voice-Data-Assistant)
 
 ---
 
